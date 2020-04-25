@@ -1,4 +1,4 @@
-const posts = [
+var posts = [
 	{
 		id: 1,
 		name: 'Ikey',

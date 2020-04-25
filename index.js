@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars');
 const logger = require('./middleware/logger')
 const posts = require('./Posts');
 
+
+
 const app = express();
 
 //Handlebars Middleware
@@ -14,11 +16,13 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+
 //Homepage Route rendering
 app.get('/', (req, res) =>
 	res.render('index', {
-		title: 'Express Chat',
-		posts
+		title: 'Express Chat', 
+		posts: posts.reverse()
 	})
 );
 
