@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get('/', (req, res) =>
 	res.render('index', {
 		title: 'Express Chat', 
-		posts: posts.reverse()
+		posts
 	})
 );
 

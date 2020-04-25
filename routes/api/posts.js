@@ -1,7 +1,10 @@
 const express = require('express');
+const moment = require('moment')
 const uuid = require('uuid');
 const router = express.Router();
 const posts = require('../../Posts');
+
+let date_ob = new Date();
 
 // Gets All Posts
 router.get('/', (req, res) => {
@@ -21,8 +24,13 @@ router.get('/:id', (req, res) => {
 
 // Create Post
 router.post('/', (req, res) => {
+
+	let s = new Date().toLocaleString();
+	console.log(s);
+
 	const newPost = {
 		id: uuid.v4(),
+		date: s,
 		name: req.body.name,
 		postmessage: req.body.postmessage,
 		status: 'active'

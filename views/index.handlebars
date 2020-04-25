@@ -2,6 +2,7 @@
   {{title}}
 </h1>
 <form action="/api/posts" method="POST" class="mb-4">
+ 
   <div class="form-group">
     <label for="name">
       Name
@@ -22,8 +23,10 @@
 <ul class="list-group">
   {{#each posts}}
     <li class="list-group-item">
+      {{this.date}}
+      
       {{this.name}}
-      :
+        => 
       {{this.postmessage}}
     </li>
   {{/each}}
